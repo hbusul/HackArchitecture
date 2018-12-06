@@ -42,12 +42,18 @@ architecture RTL of ALU is
 	signal s_x_state1, s_x_state2 : std_logic_vector(15 downto 0);
 	signal s_y_state1, s_y_state2 : std_logic_vector(15 downto 0);
 	signal s_x_plus_y , s_x_and_y : std_logic_vector(15 downto 0);
+	signal s_not_x, s_not_y : std_logic_vector(15 downto 0);
+	signal s_not_func : std_logic_vector(15 downto 0);
+	
 	signal s_function_out : std_logic_vector(15 downto 0);
 	signal s_out : std_logic_vector(15 downto 0);
 begin
 	
 	output <= s_out;
 	ng <= s_out(15);
+	s_not_x <= not s_x_state1;
+	s_not_y <= not s_y_state1;
+	s_not_func <= not s_function_out;
 	
 	isZero : component Equ16
 		port map(
@@ -68,7 +74,7 @@ begin
 	negateX: Mux16
 		port map(
 			input0 => s_x_state1,
-			input1 => not s_x_state1,
+			input1 => s_not_x,
 			sel    => nx,
 			output => s_x_state2
 		);	
@@ -84,7 +90,7 @@ begin
 	negateY: Mux16
 		port map(
 			input0 => s_y_state1,
-			input1 => not s_y_state1,
+			input1 => s_not_y,
 			sel    => ny,
 			output => s_y_state2
 		);	
@@ -110,7 +116,7 @@ begin
 	negateOut : Mux16
 		port map(
 			input0 => s_function_out,
-			input1 => not s_function_out,
+			input1 => s_not_func,
 			sel    => no,
 			output => s_out
 		);

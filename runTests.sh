@@ -84,3 +84,10 @@ echo "Running Equ16 testbench";
 eval "ghdl -a --workdir=tests components/Equ16.vhd";
 eval "ghdl -a --workdir=tests tests/Equ16_tb.vhd";
 eval "ghdl -r --workdir=tests Equ16_tb";
+
+echo "";
+echo "Running ALU testbench";
+
+eval "ghdl -a --workdir=tests components/ALU.vhd";
+eval "ghdl -a --workdir=tests tests/ALU_tb.vhd";
+eval "ghdl -r --workdir=tests ALU_tb";
