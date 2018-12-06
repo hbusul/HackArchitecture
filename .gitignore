@@ -1,0 +1,6 @@
+.project
+.library_mapping.xml
+.settings/
+work/
+*.cf
+
