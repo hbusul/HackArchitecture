@@ -70,3 +70,17 @@ echo "Running Add16 testbench";
 eval "ghdl -a --workdir=tests components/Add16.vhd";
 eval "ghdl -a --workdir=tests tests/Add16_tb.vhd";
 eval "ghdl -r --workdir=tests Add16_tb";
+
+echo "";
+echo "Running Inc16 testbench";
+
+eval "ghdl -a --workdir=tests components/Inc16.vhd";
+eval "ghdl -a --workdir=tests tests/Inc16_tb.vhd";
+eval "ghdl -r --workdir=tests Inc16_tb";
+
+echo "";
+echo "Running Equ16 testbench";
+
+eval "ghdl -a --workdir=tests components/Equ16.vhd";
+eval "ghdl -a --workdir=tests tests/Equ16_tb.vhd";
+eval "ghdl -r --workdir=tests Equ16_tb";
