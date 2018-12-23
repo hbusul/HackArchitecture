@@ -91,3 +91,19 @@ echo "Running ALU testbench";
 eval "ghdl -a --workdir=tests components/ALU.vhd";
 eval "ghdl -a --workdir=tests tests/ALU_tb.vhd";
 eval "ghdl -r --workdir=tests ALU_tb";
+
+echo "";
+echo "Running Bit testbench";
+
+eval "ghdl -a --workdir=tests components/ClockGenerator.vhd";
+eval "ghdl -a --workdir=tests components/BitHolder.vhd";
+eval "ghdl -a --workdir=tests tests/BitHolder_tb.vhd";
+eval "ghdl -r --workdir=tests BitHolder_tb";
+
+echo "";
+echo "Running Reg16 testbench";
+
+eval "ghdl -a --workdir=tests components/ClockGenerator.vhd";
+eval "ghdl -a --workdir=tests components/Reg16.vhd";
+eval "ghdl -a --workdir=tests tests/Reg16_tb.vhd";
+eval "ghdl -r --workdir=tests Reg16_tb";
