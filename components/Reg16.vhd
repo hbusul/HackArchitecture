@@ -14,15 +14,15 @@ end entity Reg16;
 
 architecture RTL of Reg16 is
 	signal value : std_logic_vector(15 downto 0) := "0000000000000000";
-	
+
 begin
 	output <= value;
-	flipflop : process(clk, rst) is
+	flipflop : process(clk) is
 	begin
-		if rst = '1' then
-			value <= "0000000000000000";
-		elsif rising_edge(clk) then
-			if load = '1' then
+		if rising_edge(clk) then
+			if rst = '1' then
+				value <= "0000000000000000";
+			elsif load = '1' then
 				value <= input;
 			end if;
 		end if;

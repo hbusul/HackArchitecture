@@ -22,8 +22,7 @@ A VHDL Implementation of Hack Architecture described in Nand2Tetris Course.
   - Mux16
   - Reg16
 # To be implemented
-  - PC
-  - Ram8
+  - Ram8(testbench)
   - Ram64
   - Ram512
   - Ram4K
