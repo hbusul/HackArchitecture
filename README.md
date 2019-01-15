@@ -23,15 +23,14 @@ A VHDL Implementation of Hack Architecture described in Nand2Tetris Course.
   - Reg16
   - PC
   - Ram8
-# To be implemented
-*This list is not full and will be updated*
   - Ram64
   - Ram512
+# To be implemented
+*This list is not full and will be updated*
   - Ram4K
   - Ram16K
-
-
-
+  - Computer
+  - Memory
 
 License
 ----
