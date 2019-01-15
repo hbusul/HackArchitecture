@@ -51,7 +51,7 @@ begin
 			
 	process(clk) is
 	begin
-		if rising_edge(clk) then
+		if rising_edge(clk) then		
 			if address = "000" then 
 				output <= s_reg_values(0);
 			elsif address = "001" then

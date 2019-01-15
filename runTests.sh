@@ -4,7 +4,7 @@ eval "rm *.cf -f";
 echo "";
 
 eval "ghdl -a --workdir=tests components/ClockGenerator.vhd";
-components=("DMux" "DMux4Way" "DMux8Way" "Mux" "Mux16" "Mux4Way16" "Mux8Way16" "HalfAdder" "FullAdder" "Add16" "Inc16" "Equ16" "ALU" "BitHolder" "Reg16" "PC" "Ram8")
+components=("DMux" "DMux4Way" "DMux8Way" "Mux" "Mux16" "Mux4Way16" "Mux8Way16" "HalfAdder" "FullAdder" "Add16" "Inc16" "Equ16" "ALU" "BitHolder" "Reg16" "PC" "Ram8" "Ram64" "Ram512")
 
 
 for i in "${components[@]}"; do
