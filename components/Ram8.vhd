@@ -27,19 +27,28 @@ architecture RTL of Ram8 is
 	
 	
 	signal s_reg_values : REGISTER_VALUES;
+	signal s_load_values : std_logic_vector(7 downto 0) := "00000000";
+	
 begin
 	tie_components : for i in 0 to 7 generate
 		comp : Reg16
 			port map(
 				clk    => clk,
 				rst    => rst,
-				load   => load,
+				load   => s_load_values(i),
 				input  => input,
 				output => s_reg_values(i)
-			);
+			);	
 	end generate tie_components;
 	
-	
+	dmux : entity work.DMux8Way
+		port map(
+			sel    => address,
+			input  => load,
+			output => s_load_values
+		);
+			
+			
 	process(clk) is
 	begin
 		if rising_edge(clk) then
